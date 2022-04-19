@@ -58,3 +58,39 @@ h1.title-section:hover::after {
   width: 100%;
   left: 0;
 }
+
+.hightlight-text:hover {
+  background-image: linear-gradient(
+    0deg,
+    #0072ff,
+    #00d2e8 17%,
+    #04fd8f 34%,
+    #70fd6c 51%,
+    #dae11e 68%,
+    #ff9346 85%,
+    #ff62c6
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 4s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    filter: hue-rotate(260deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
