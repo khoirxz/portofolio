@@ -1,4 +1,5 @@
 import Layout from "../layout/Layout";
+import { motion } from "framer-motion";
 import { Card, Container, SectionContent } from "../components/molecules";
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
@@ -9,7 +10,19 @@ export default function Home() {
     <Layout>
       <Container>
         <SectionContent className="min-h-screen flex items-center flex-row box-border">
-          <div className="section1 max-w-screen-lg m-auto p-0 md:p-10 text-center md:text-left">
+          <motion.div
+            whileInView={{
+              opacity: 1,
+            }}
+            initial={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.25,
+              delay: 0.3,
+            }}
+            className="section1 max-w-screen-lg m-auto p-0 md:p-10 text-center md:text-left"
+          >
             <h1 className="title-section text-3xl my-5 pb-2 cursor-pointer relative inline-block">
               Introduction
             </h1>
@@ -37,10 +50,22 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </SectionContent>
         <SectionContent className="min-h-screen flex items-center flex-row box-border">
-          <div className="section1 max-w-screen-lg w-full m-auto p-0 md:p-10">
+          <motion.div
+            whileInView={{
+              opacity: 1,
+            }}
+            initial={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.25,
+              delay: 0.3,
+            }}
+            className="section1 max-w-screen-lg w-full m-auto p-0 md:p-10"
+          >
             <div className="mb-5">
               <h1 className="title-section text-3xl my-5 pb-2 cursor-pointer relative inline-block">
                 Projects
@@ -54,7 +79,7 @@ export default function Home() {
               <Card />
               <Card />
             </div>
-          </div>
+          </motion.div>
         </SectionContent>
       </Container>
     </Layout>
