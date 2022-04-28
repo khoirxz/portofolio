@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const data = ["Home", "About", "Contact"];
 
 const Navbar = () => {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackround = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackround);
+  }, []);
+
   return (
-    <nav className="navbar max-w-screen-2xl w-9/12 m-auto py-4 z-10 fixed left-1/2 -translate-x-1/2 bg-glass backdrop-blur-sm">
-      <div className=" flex flex-row items-center justify-between">
+    <nav
+      className={
+        navbar
+          ? "bg-glass backdrop-blur-sm navbar max-w-screen-2xl w-9/12 m-auto py-4 z-10 fixed left-1/2 -translate-x-1/2"
+          : "bg-glass navbar max-w-screen-2xl w-9/12 m-auto py-4 z-10 fixed left-1/2 -translate-x-1/2"
+      }
+    >
+      <div className="flex flex-row items-center justify-between">
         <div className="flex items-center">
           <svg
             style={{ margin: "0 5 0 5" }}
